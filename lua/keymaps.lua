@@ -57,5 +57,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gi", function ()
             require("telescope.builtin").lsp_implementations({})
         end, opts)
+
+        vim.keymap.set({"i", "n", "v"}, "<C-a>", vim.lsp.buf.code_action, opts)
+        vim.keymap.set("n", "T", vim.lsp.buf.hover, opts)
     end,
 });
+
+vim.keymap.set("n", "<Leader>do", vim.diagnostic.open_float)
+
