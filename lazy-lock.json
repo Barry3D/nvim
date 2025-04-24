@@ -1,6 +1,7 @@
 {
   "actions-preview.nvim": { "branch": "master", "commit": "4ab7842eb6a5b6d2b004f8234dcf33382a0fdde2" },
   "auto-save.nvim": { "branch": "main", "commit": "5fbcaac0a2698c87a9a1bd2083cb6949505cca12" },
+  "conform.nvim": { "branch": "master", "commit": "372fc521f8421b7830ea6db4d6ea3bae1c77548c" },
   "coq_nvim": { "branch": "coq", "commit": "07dfa511508c53a512d269135cb75c177894a910" },
   "cyberdream.nvim": { "branch": "main", "commit": "982c9b33612a9cd97e6df141c3d8c535c74381c5" },
   "gitsigns.nvim": { "branch": "main", "commit": "ee7e50dfbdf49e3acfa416fd3ad3abbdb658582c" },
