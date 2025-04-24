@@ -20,6 +20,17 @@ return {
     },
     {
         'williamboman/mason.nvim',
+        cmd = {
+            "Mason",
+			"MasonInstall",
+			"MasonUpdate",
+			"MasonUninstall",
+			"MasonList",
+			"MasonSearch",
+			"MasonInstallAll",
+			"MasonUpdateAll",
+			"MasonUninstallAll",
+        },
         config = function()
             require('mason').setup()
         end,
@@ -34,7 +45,7 @@ return {
             ensure_installed = {
                 'lua_ls',
                 'volar',
-                'phpactor',
+                'intelephense',
                 'ts_ls',
                 'psalm',
                 'twiggy',
@@ -54,10 +65,93 @@ return {
             lspconfig.typos_lsp.setup({})
 
             -- PHP
-            lspconfig.phpactor.setup({
-                root_dir = lspconfig.util.root_pattern("composer.json"),
-            })
+            -- lspconfig.phpactor.setup({
+            --    root_dir = lspconfig.util.root_pattern("composer.json", ".git"),
+            -- })
             lspconfig.twiggy_language_server.setup({})
+			lspconfig.intelephense.setup({
+				settings = {
+					intelephense = {
+						stubs = {
+							"ds",
+							"apache",
+							"bcmath",
+							"bz2",
+							"calendar",
+							"com_dotnet",
+							"Core",
+							"ctype",
+							"curl",
+							"date",
+							"dba",
+							"dom",
+							"enchant",
+							"exif",
+							"FFI",
+							"fileinfo",
+							"filter",
+							"fpm",
+							"ftp",
+							"gd",
+							"gettext",
+							"gmp",
+							"hash",
+							"iconv",
+							"imap",
+							"intl",
+							"json",
+							"ldap",
+							"libxml",
+							"mbstring",
+							"meta",
+							"mysqli",
+							"oci8",
+							"odbc",
+							"openssl",
+							"pcntl",
+							"pcre",
+							"PDO",
+							"pdo_ibm",
+							"pdo_mysql",
+							"pdo_pgsql",
+							"pdo_sqlite",
+							"pgsql",
+							"Phar",
+							"posix",
+							"pspell",
+							"readline",
+							"Reflection",
+							"session",
+							"shmop",
+							"SimpleXML",
+							"snmp",
+							"soap",
+							"sockets",
+							"sodium",
+							"SPL",
+							"sqlite3",
+							"standard",
+							"superglobals",
+							"sysvmsg",
+							"sysvsem",
+							"sysvshm",
+							"tidy",
+							"tokenizer",
+							"xml",
+							"xmlreader",
+							"xmlrpc",
+							"xmlwriter",
+							"xsl",
+							"Zend OPcache",
+							"zip",
+							"zlib",
+						},
+						environment = {
+							phpVersion = "8.2",
+						},
+					},
+				},
+			})
 
             -- JS/Vue
             local mason_registry = require("mason-registry")
