@@ -33,6 +33,15 @@ vim.keymap.set("n", "<C-" .. keys.j .. ">", "<C-w>j", { noremap = true })
 vim.keymap.set("n", "<C-" .. keys.k .. ">", "<C-w>k", { noremap = true })
 vim.keymap.set("n", "<C-" .. keys.l .. ">", "<C-w>l", { noremap = true })
 
+-- system clipboard
+vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank line to system clipboard" })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selection to system clipboard" })
+
+vim.keymap.set("n", "<leader>p", '"+p', { desc = "Paste after from system clipboard" })
+vim.keymap.set("n", "<leader>P", '"+P', { desc = "Paste before from system clipboard" })
+vim.keymap.set("v", "<leader>p", '"+p', { desc = "Paste from system clipboard" })
+
 -- LSP mappings
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspGroup", {}),

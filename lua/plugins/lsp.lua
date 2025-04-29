@@ -55,6 +55,7 @@ return {
                 'cssls',
                 'eslint',
                 'bashls',
+                'pyright',
             },
         },
         config = function()
@@ -228,6 +229,9 @@ return {
                     },
                 },
             })
+
+            -- Python
+            lspconfig.pyright.setup({})
 		end,
     },
 }
