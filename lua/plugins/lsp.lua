@@ -19,7 +19,8 @@ return {
         },
     },
     {
-        'williamboman/mason.nvim',
+        'mason-org/mason.nvim',
+        version = "^1.0.0",
         cmd = {
             "Mason",
 			"MasonInstall",
@@ -36,7 +37,8 @@ return {
         end,
     },
     {
-        'williamboman/mason-lspconfig.nvim',
+        'mason-org/mason-lspconfig.nvim',
+        version = "^1.0.0",
         dependencies = {
             'neovim/nvim-lspconfig',
         },
