@@ -20,7 +20,7 @@ return {
     },
     {
         'mason-org/mason.nvim',
-        version = "^1.0.0",
+        version = "^1.0.0", -- TODO: Update to v2.0.0 as soon as ubuntu supports nvim v0.11
         cmd = {
             "Mason",
 			"MasonInstall",
@@ -57,6 +57,8 @@ return {
                 'cssls',
                 'eslint',
                 'bashls',
+                'python-lsp-server',
+                'black',
                 'pyright',
             },
         },
@@ -233,7 +235,7 @@ return {
             })
 
             -- Python
-            lspconfig.pyright.setup({})
+            lspconfig.pylsp.setup({})
 		end,
     },
 }

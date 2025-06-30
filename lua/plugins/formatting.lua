@@ -13,6 +13,7 @@ return {
             scss = { "prettierd" },
             html = { "prettierd" },
             php = { "php_cs_fixer" },
+            python = { "black" }
         },
         formatters = {
             php_cs_fixer = {
