@@ -1,0 +1,3 @@
+return {
+    'cvigilv/esqueleto.nvim',
+}

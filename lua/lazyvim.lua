@@ -24,5 +24,3 @@ require("lazy").setup({
   install = { colorscheme = { "cyberdream" } },
 })
 
--- TODO: Remove this setup. Why isn't the plugin enough?
-require('mini.cursorword').setup()

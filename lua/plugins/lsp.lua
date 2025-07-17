@@ -57,8 +57,6 @@ return {
                 'cssls',
                 'eslint',
                 'bashls',
-                'python-lsp-server',
-                'black',
                 'pyright',
             },
         },
@@ -235,7 +233,18 @@ return {
             })
 
             -- Python
-            lspconfig.pylsp.setup({})
+            -- FIXME: It seems like pyright does not look at our code in `./app/synapse_auth_module`
+            lspconfig.pyright.setup({
+                root_dir = lspconfig.util.root_pattern(".git", "setup.cfg"),
+                settings = {
+                    python = {
+                        analysis = {
+                            useLibraryCodeForTypes = true,
+                            typeCheckingMode = "strict",
+                        }
+                    }
+                }
+            })
 		end,
     },
 }

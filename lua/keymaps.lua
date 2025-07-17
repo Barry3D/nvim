@@ -33,6 +33,8 @@ vim.keymap.set("n", "<C-" .. keys.j .. ">", "<C-w>j", { noremap = true })
 vim.keymap.set("n", "<C-" .. keys.k .. ">", "<C-w>k", { noremap = true })
 vim.keymap.set("n", "<C-" .. keys.l .. ">", "<C-w>l", { noremap = true })
 
+vim.keymap.set("n", "<C-b>", ":%bd|e#<cr>")
+
 -- system clipboard
 vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank line to system clipboard" })
