@@ -6,6 +6,6 @@ require("lazyvim")
 require('mini.cursorword').setup()
 require('esqueleto').setup(
     {
-        patterns = { 'php', 'vue' },
+        patterns = { 'php', 'vue', 'python', 'yml' },
     }
 )
