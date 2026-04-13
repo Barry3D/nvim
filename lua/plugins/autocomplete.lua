@@ -1,6 +1,6 @@
 return {
     "neovim/nvim-lspconfig",
-    lazy = false,
+    event = "BufReadPost",
     dependencies = {
         {
             'ms-jpq/coq_nvim',

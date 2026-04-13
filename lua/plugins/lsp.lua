@@ -42,7 +42,7 @@ return {
         dependencies = {
             'neovim/nvim-lspconfig',
         },
-        lazy = false,
+        event = "BufReadPost",
         opts = {
             ensure_installed = {
                 'lua_ls',
