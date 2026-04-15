@@ -63,16 +63,18 @@ return {
         config = function()
             require("neodev").setup()
             local lspconfig = require("lspconfig")
+            local capabilities = require('blink.cmp').get_lsp_capabilities()
 
             -- Everywhere utilities
-            lspconfig.typos_lsp.setup({})
+            lspconfig.typos_lsp.setup({ capabilities = capabilities })
 
             -- PHP
             -- lspconfig.phpactor.setup({
             --    root_dir = lspconfig.util.root_pattern("composer.json", ".git"),
             -- })
-            lspconfig.twiggy_language_server.setup({})
+            lspconfig.twiggy_language_server.setup({ capabilities = capabilities })
 			lspconfig.intelephense.setup({
+                capabilities = capabilities,
 				settings = {
 					intelephense = {
 						stubs = {
@@ -161,6 +163,7 @@ return {
             local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
             .. "/node_modules/@vue/language-server"
             lspconfig.ts_ls.setup({
+                capabilities = capabilities,
                 init_options = {
                     plugins = {
                         {
@@ -196,14 +199,16 @@ return {
                     },
                 },
             })
-            lspconfig.volar.setup({})
+            lspconfig.volar.setup({ capabilities = capabilities })
             lspconfig.html.setup({
+                capabilities = capabilities,
                 filetypes = { "html", "vue", "twig" },
             })
             lspconfig.cssls.setup({
+                capabilities = capabilities,
                 filetypes = { "css", "less", "scss", "vue" },
             })
-            lspconfig.eslint.setup({})
+            lspconfig.eslint.setup({ capabilities = capabilities })
 
             -- Custom element lsp
             -- lspconfig.custom_elements_ls.setup({
@@ -216,25 +221,26 @@ return {
             --})
 
             -- Lua
-            lspconfig.lua_ls.setup({})
+            lspconfig.lua_ls.setup({ capabilities = capabilities })
 
             -- Bash
-            lspconfig.bashls.setup({})
+            lspconfig.bashls.setup({ capabilities = capabilities })
 
             -- Swift
             lspconfig.sourcekit.setup({
-                capabilities = {
+                capabilities = require('blink.cmp').get_lsp_capabilities({
                     workspace = {
                         didChangeWatchedFiles = {
                             dynamicRegistration = true,
                         },
                     },
-                },
+                }),
             })
 
             -- Python
             -- FIXME: It seems like pyright does not look at our code in `./app/synapse_auth_module`
             lspconfig.pyright.setup({
+                capabilities = capabilities,
                 root_dir = lspconfig.util.root_pattern(".git", "setup.cfg"),
                 settings = {
                     python = {

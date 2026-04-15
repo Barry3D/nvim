@@ -1,19 +1,11 @@
 return {
-    "neovim/nvim-lspconfig",
-    event = "BufReadPost",
-    dependencies = {
-        {
-            'ms-jpq/coq_nvim',
-            branch = 'coq',
-        }
+    "saghen/blink.cmp",
+    version = '1.*',
+    opts = {
+        keymap = { preset = 'default' },
+        sources = {
+            default = { 'lsp', 'path', 'snippets', 'buffer' },
+        },
     },
-    init = function()
-        vim.g.coq_settings = {
-            auto_start = true,
-            completion = {
-                skip_after = {"{", "}", "[", "]", ";", " "},
-            }
-        }
-    end,
 }
 

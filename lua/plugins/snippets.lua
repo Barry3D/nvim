@@ -1,5 +1,5 @@
 return {
     "cvigilv/esqueleto.nvim",
-    event = "BufNewFile",
+    lazy = false,
     opts = { patterns = { "php", "vue", "python", "yml" } },
 }
